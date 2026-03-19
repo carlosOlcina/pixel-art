@@ -1,0 +1,5 @@
+section{
+  height: var(--section-height);
+  width: 100vw;
+  position: relative;
+}
