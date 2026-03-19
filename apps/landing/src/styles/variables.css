@@ -1,0 +1,9 @@
+:root {
+  --color-primary: #2D4F1E;
+  --color-secondary: #F5E6CC;
+  --color-tertiry: #E27D60;
+  --color-neutral: #4A4A4A;
+
+  --header-height: 10vh;
+  --section-height: 100vh;
+}
