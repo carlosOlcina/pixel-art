@@ -19,7 +19,11 @@
             "input": "apps/landing/public"
           }
         ],
-        "styles": ["apps/landing/src/styles.css"],
+        "styles": [
+          "apps/landing/src/styles/reset.css",
+          "apps/landing/src/styles/variables.css",
+          "apps/landing/src/styles/styles.css"
+        ],
         "server": "apps/landing/src/main.server.ts",
         "ssr": {
           "entry": "apps/landing/src/server.ts"
