@@ -1,0 +1,11 @@
+.title{
+  position: absolute;
+  bottom: 4rem;
+  left: 4rem;
+}
+
+.logo{
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+}
