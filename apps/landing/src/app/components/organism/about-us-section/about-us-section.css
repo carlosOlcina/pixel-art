@@ -1,0 +1,26 @@
+.who-we-are{
+  background: var(--color-primary);
+}
+.grid-wrap{
+  padding: 6rem;
+  height: 100%;
+
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  align-content: center;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: end;
+}
+
+.paragraphs{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

@@ -1,0 +1,19 @@
+<landing-section class="who-we-are">
+  <div class="grid-wrap">
+    <div class="logo">
+      <landing-logo [color]="colorSecondary" [size]="250"></landing-logo>
+    </div>
+
+    <div class="content">
+      <landing-title-2 [color]="colorSecondary">{{ title }}</landing-title-2>
+
+      <div class="paragraphs">
+        @for (paragraph of paragraphs; track paragraph.id) {
+          <landing-paragraph [color]="colorSecondary">
+            {{ paragraph.text }}
+          </landing-paragraph>
+        }
+      </div>
+    </div>
+  </div>
+</landing-section>
