@@ -1,3 +1,7 @@
+:host{
+  display: block;
+}
+
 section{
   height: var(--section-height);
   width: 100vw;
