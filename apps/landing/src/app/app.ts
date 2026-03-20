@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { HeroSection } from './components/organism/hero-section/hero-section';
 import { Header } from './components/organism/header/header';
 import { AboutUsSection } from './components/organism/about-us-section/about-us-section';
+import { ProjectsSection } from './components/organism/projects-section/projects-section';
 
 @Component({
   imports: [
@@ -10,6 +11,7 @@ import { AboutUsSection } from './components/organism/about-us-section/about-us-
     HeroSection,
     Header,
     AboutUsSection,
+    ProjectsSection,
   ],
   selector: 'app-root',
   standalone: true,
@@ -17,5 +19,4 @@ import { AboutUsSection } from './components/organism/about-us-section/about-us-
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
-}
+export class App {}

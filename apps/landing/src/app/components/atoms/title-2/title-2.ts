@@ -7,6 +7,7 @@ import { NgStyle } from '@angular/common';
   imports: [NgStyle],
   templateUrl: './title-2.html',
   styleUrl: './title-2.css',
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Title2 {
