@@ -4,4 +4,8 @@
 
 body{
   background-color: var(--color-secondary);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
 }
+
