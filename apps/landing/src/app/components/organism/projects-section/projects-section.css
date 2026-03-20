@@ -1,0 +1,12 @@
+.project{
+  display: block;
+  height: var(--section-height);
+  background-size: cover;
+  position: relative;
+}
+
+.title{
+  position: absolute;
+  top: 7rem;
+  left: 5rem;
+}
