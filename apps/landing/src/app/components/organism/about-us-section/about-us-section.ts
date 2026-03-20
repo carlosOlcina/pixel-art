@@ -1,18 +1,27 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from '@angular/core';
 import { Logo } from '../../atoms/logo/logo';
 import { Paragraph } from '../../atoms/paragraph/paragraph';
 import { Section } from '../section/section';
 import { Title2 } from '../../atoms/title-2/title-2';
 import colorsBrand from '../../../data/colors';
+import { ScrollSectionService } from '../../../services/scroll-section';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'landing-about-us-section',
-  imports: [Logo, Paragraph, Section, Title2],
+  imports: [Logo, Paragraph, Section, Title2, NgClass],
   templateUrl: './about-us-section.html',
   styleUrl: './about-us-section.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutUsSection {
+  scrollSectionService = inject(ScrollSectionService);
+
   colorSecondary = colorsBrand.secondary;
 
   title = 'Quién somos';
@@ -27,4 +36,8 @@ export class AboutUsSection {
       text: 'En cada proyecto que tocamos hay una obsesión silenciosa: que cuando alguien lo vean algo en su interior diga "esto es exactamente lo que buscaba", aunque nunca hubiera sabido describirlo',
     },
   ];
+
+  isNext = computed(
+    () => this.scrollSectionService.nextSection() === 'about-us',
+  );
 }

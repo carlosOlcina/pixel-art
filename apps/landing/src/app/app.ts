@@ -6,13 +6,7 @@ import { AboutUsSection } from './components/organism/about-us-section/about-us-
 import { ProjectsSection } from './components/organism/projects-section/projects-section';
 
 @Component({
-  imports: [
-    RouterModule,
-    HeroSection,
-    Header,
-    AboutUsSection,
-    ProjectsSection,
-  ],
+  imports: [RouterModule, HeroSection, Header, AboutUsSection, ProjectsSection],
   selector: 'app-root',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,

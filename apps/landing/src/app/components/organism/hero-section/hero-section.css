@@ -8,4 +8,8 @@
   position: absolute;
   bottom: 4rem;
   right: 4rem;
+  transition: scale 1s ease-in-out;
+}
+.logo.out{
+  scale: 20;
 }
