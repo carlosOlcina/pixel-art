@@ -1,12 +1,24 @@
 .project{
-  display: block;
   height: var(--section-height);
+  width: 100vw;
+
   background-size: cover;
-  position: relative;
+
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  transition: top 1s ease-in-out;
+  z-index: 100;
 }
 
 .title{
   position: absolute;
   top: 7rem;
   left: 5rem;
+}
+
+.project.next, .project.out{
+  position: absolute;
+  z-index: 1000;
+  top: 0;
 }
