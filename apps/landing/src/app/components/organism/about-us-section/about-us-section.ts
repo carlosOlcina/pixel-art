@@ -18,6 +18,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './about-us-section.html',
   styleUrl: './about-us-section.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
 export class AboutUsSection {
   scrollSectionService = inject(ScrollSectionService);

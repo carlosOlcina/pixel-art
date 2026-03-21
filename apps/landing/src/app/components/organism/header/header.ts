@@ -7,6 +7,7 @@ import { HeaderLink } from '../../atoms/header-link/header-link';
   templateUrl: './header.html',
   styleUrl: './header.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
 export class Header {
   readonly links: LinkHeader[] = [

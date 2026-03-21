@@ -8,6 +8,7 @@ import { NgStyle } from '@angular/common';
   templateUrl: './paragraph.html',
   styleUrl: './paragraph.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
 export class Paragraph {
   color = input<string>(colorsBrand.neutral);

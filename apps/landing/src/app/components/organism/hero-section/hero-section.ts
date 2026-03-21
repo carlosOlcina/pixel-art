@@ -18,6 +18,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
 export class HeroSection {
   scrollSectionService = inject(ScrollSectionService);
