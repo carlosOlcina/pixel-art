@@ -1,20 +1,12 @@
 import {
   inject,
-  Inject,
   Injectable,
   OnDestroy,
   PLATFORM_ID,
   signal,
 } from '@angular/core';
 import Projects from '../data/projects';
-import {
-  filter,
-  fromEvent,
-  map,
-  pairwise,
-  Subscription,
-  throttleTime,
-} from 'rxjs';
+import { fromEvent, Subscription, throttleTime } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
@@ -24,7 +16,7 @@ export class ScrollSectionService implements OnDestroy {
   private sections = [
     'hero',
     'about-us',
-    ...Projects.map((project) => `project-${project.id}`),
+    ...Projects.map((project) => `${project.id}`),
   ];
 
   direction = signal<'up' | 'down' | null>(null);
