@@ -3,13 +3,12 @@ import {
   IsDateString,
   IsOptional,
   IsPhoneNumber,
-  IsUUID,
 } from 'class-validator';
+import { Exclude } from 'class-transformer';
 
 export class UpdateDateDto {
-  @IsOptional()
-  @IsUUID()
-  id: string = crypto.randomUUID();
+  @Exclude()
+  id: string;
 
   @IsOptional()
   @IsPhoneNumber()
