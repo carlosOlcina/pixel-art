@@ -1,0 +1,55 @@
+volumes:
+  mariadb-prod-data:
+
+name: pixelart
+
+services:
+  db:
+    image: mariadb:10.6
+    restart: always
+    networks:
+      - app-network
+    volumes:
+      - mariadb-prod-data:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root_prod_pass}
+      MARIADB_DATABASE: ${DB_NAME:-pixelart}
+      MARIADB_USER: ${DB_USER:-prod_user}
+      MARIADB_PASSWORD: ${DB_PASSWORD:-prod_pass}
+
+  api:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile.prod
+      target: api-runtime
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - app-network
+    environment:
+      DATABASE_HOST: db
+      DATABASE_USER: ${DB_USER:-prod_user}
+      DATABASE_PASSWORD: ${DB_PASSWORD:-prod_pass}
+      DATABASE_NAME: ${DB_NAME:-pixelart}
+
+  landing:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile.prod
+      target: landing-runtime
+    restart: always
+    ports:
+      - "4200:4200"
+    depends_on:
+      - api
+    networks:
+      - app-network
+    environment:
+      API_URL: http://api:3000
+
+networks:
+  app-network:
+    driver: bridge
