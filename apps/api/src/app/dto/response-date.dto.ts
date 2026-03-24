@@ -19,5 +19,5 @@ export class ResponseDateDto {
 
   @Transform(({ value }) => new Date(value).toISOString())
   @Expose()
-  updatedAt: Date;
+  updatedAt: string;
 }
