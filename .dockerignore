@@ -1,0 +1,13 @@
+node_modules
+.angular
+.nx/cache
+dist
+tmp
+.pnpm-store
+
+.git
+.gitignore
+
+.docker
+Dockerfile*
+docker-compose*

@@ -30,6 +30,7 @@ services:
     networks:
       - app-network
     environment:
+      PORT: 3000
       DATABASE_HOST: db
       DATABASE_USER: ${DB_USER:-prod_user}
       DATABASE_PASSWORD: ${DB_PASSWORD:-prod_pass}
@@ -41,6 +42,7 @@ services:
       dockerfile: .docker/Dockerfile.prod
       target: landing-runtime
     restart: always
+
     ports:
       - "4200:4200"
     depends_on:
@@ -48,6 +50,7 @@ services:
     networks:
       - app-network
     environment:
+      PORT: 4200
       API_URL: http://api:3000
 
 networks:
