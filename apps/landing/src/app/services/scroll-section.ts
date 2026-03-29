@@ -17,6 +17,7 @@ export class ScrollSectionService implements OnDestroy {
     'hero',
     'about-us',
     ...Projects.map((project) => `${project.id}`),
+    'form',
   ];
 
   direction = signal<'up' | 'down' | null>(null);
@@ -36,7 +37,7 @@ export class ScrollSectionService implements OnDestroy {
         passive: false,
         capture: true,
       })
-        .pipe(throttleTime(2000))
+        .pipe(throttleTime(1000))
         .subscribe((event) => {
           event.preventDefault();
 
