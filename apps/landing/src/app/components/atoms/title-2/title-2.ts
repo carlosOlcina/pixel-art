@@ -12,4 +12,5 @@ import { NgStyle } from '@angular/common';
 })
 export class Title2 {
   color = input<string>(colorsBrand.primary);
+  centered = input(false);
 }
