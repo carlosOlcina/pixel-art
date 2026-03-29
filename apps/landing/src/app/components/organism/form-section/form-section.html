@@ -1,0 +1,40 @@
+<landing-section [ngClass]="{section: true, next: isNext()}">
+  <div class="container">
+    <landing-title-2 [centered]="true">Empiece su idea</landing-title-2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Teléfono</mat-label>
+        <input matInput formControlName="phone" placeholder="+34 600 000 000" type="tel">
+        @if (form.get('phone')?.hasError('required')) {
+          <mat-error>El teléfono es obligatorio</mat-error>
+        }
+        @if (form.get('phone')?.hasError('pattern')) {
+          <mat-error>Formato de teléfono no válido</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Día</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date" placeholder="dd/mm/aaaa">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        @if (form.get('date')?.hasError('required')) {
+          <mat-error>La fecha es obligatoria</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Hora</mat-label>
+        <input matInput [matTimepicker]="timePicker" formControlName="time" placeholder="hh:mm">
+        <mat-timepicker-toggle matIconSuffix [for]="timePicker"/>
+        <mat-timepicker #timePicker/>
+        @if (form.get('time')?.hasError('required')) {
+          <mat-error>La hora es obligatoria</mat-error>
+        }
+      </mat-form-field>
+
+      <button type="submit" [disabled]="form.invalid">Enviar</button>
+    </form>
+  </div>
+</landing-section>
