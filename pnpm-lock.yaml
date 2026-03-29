@@ -97,6 +97,9 @@ devDependencies:
   '@angular/language-service':
     specifier: 21.2.2
     version: 21.2.2
+  '@angular/material':
+    specifier: ^21.2.4
+    version: 21.2.4(@angular/cdk@21.2.4)(@angular/common@21.2.2)(@angular/core@21.2.4)(@angular/forms@21.2.2)(@angular/platform-browser@21.2.2)(rxjs@7.8.2)
   '@eslint/js':
     specifier: ^9.8.0
     version: 9.39.4
@@ -921,6 +924,22 @@ packages:
       - yaml
     dev: true
 
+  /@angular/cdk@21.2.4(@angular/common@21.2.2)(@angular/core@21.2.4)(@angular/platform-browser@21.2.2)(rxjs@7.8.2):
+    resolution: {integrity: sha512-Zv+q9Z/wVWTt0ckuO3gnU7PbpCLTr1tKPEsofLGGzDufA5/85aBLn2UiLcjlY6wQ+V3EMqANhGo/8XJgvBEYFA==}
+    peerDependencies:
+      '@angular/common': ^21.0.0 || ^22.0.0
+      '@angular/core': ^21.0.0 || ^22.0.0
+      '@angular/platform-browser': ^21.0.0 || ^22.0.0
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/common': 21.2.2(@angular/core@21.2.4)(rxjs@7.8.2)
+      '@angular/core': 21.2.4(@angular/compiler@21.2.4)(rxjs@7.8.2)(zone.js@0.16.0)
+      '@angular/platform-browser': 21.2.2(@angular/common@21.2.2)(@angular/core@21.2.4)
+      parse5: 8.0.0
+      rxjs: 7.8.2
+      tslib: 2.8.1
+    dev: true
+
   /@angular/cli@21.2.2(@types/node@20.19.9):
     resolution: {integrity: sha512-eZo8/qX+ZIpIWc0CN+cCX13Lbgi/031wAp8DRVhDDO6SMVtcr/ObOQ2S16+pQdOMXxiG3vby6IhzJuz9WACzMQ==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
@@ -1025,11 +1044,29 @@ packages:
       '@standard-schema/spec': 1.1.0
       rxjs: 7.8.2
       tslib: 2.8.1
-    dev: false
 
   /@angular/language-service@21.2.2:
     resolution: {integrity: sha512-86KVMs0rYsALTGOA5qNS73hJFKAoXNCPZuGw2Nk4ikZHlgn3fMLbKBp9nX0O4ZENYn6bWzbKfpBy5JH+2VKxqA==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
+    dev: true
+
+  /@angular/material@21.2.4(@angular/cdk@21.2.4)(@angular/common@21.2.2)(@angular/core@21.2.4)(@angular/forms@21.2.2)(@angular/platform-browser@21.2.2)(rxjs@7.8.2):
+    resolution: {integrity: sha512-YzkPjgZezdsDeAhSm3zix2h+ohApwaRUMG8ea/75XR1eSkT1n3N7qZaHC8HDkhPYApk8a951RDxsTiiAidnGqg==}
+    peerDependencies:
+      '@angular/cdk': 21.2.4
+      '@angular/common': ^21.0.0 || ^22.0.0
+      '@angular/core': ^21.0.0 || ^22.0.0
+      '@angular/forms': ^21.0.0 || ^22.0.0
+      '@angular/platform-browser': ^21.0.0 || ^22.0.0
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/cdk': 21.2.4(@angular/common@21.2.2)(@angular/core@21.2.4)(@angular/platform-browser@21.2.2)(rxjs@7.8.2)
+      '@angular/common': 21.2.2(@angular/core@21.2.4)(rxjs@7.8.2)
+      '@angular/core': 21.2.4(@angular/compiler@21.2.4)(rxjs@7.8.2)(zone.js@0.16.0)
+      '@angular/forms': 21.2.2(@angular/common@21.2.2)(@angular/core@21.2.4)(@angular/platform-browser@21.2.2)(rxjs@7.8.2)
+      '@angular/platform-browser': 21.2.2(@angular/common@21.2.2)(@angular/core@21.2.4)
+      rxjs: 7.8.2
+      tslib: 2.8.1
     dev: true
 
   /@angular/platform-browser@21.2.2(@angular/common@21.2.2)(@angular/core@21.2.4):
