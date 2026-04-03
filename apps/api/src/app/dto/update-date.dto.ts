@@ -1,6 +1,6 @@
 import {
-  IsBoolean,
   IsDateString,
+  IsEnum,
   IsOptional,
   IsPhoneNumber,
 } from 'class-validator';
@@ -19,6 +19,6 @@ export class UpdateDateDto {
   date: string;
 
   @IsOptional()
-  @IsBoolean()
-  confirmed: boolean;
+  @IsEnum(['pending', 'confirmed', 'cancelled', 'completed'])
+  status: boolean;
 }
