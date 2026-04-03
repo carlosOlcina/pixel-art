@@ -39,6 +39,8 @@ export class ScrollSectionService implements OnDestroy {
       })
         .pipe(throttleTime(1000))
         .subscribe((event) => {
+          if (window.innerWidth <= 768) return;
+
           event.preventDefault();
 
           const dir = event.deltaY > 0 ? 'down' : 'up';
