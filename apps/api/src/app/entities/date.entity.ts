@@ -1,6 +1,7 @@
 import {
   Column,
   CreateDateColumn,
+  DeleteDateColumn,
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -15,14 +16,21 @@ export class Date {
   phone: string;
 
   @Column({ type: 'timestamp' })
-  date: string;
+  date: Date;
 
-  @Column({ default: false, type: 'boolean' })
-  confirmed: boolean;
+  @Column({
+    type: 'enum',
+    enum: ['pending', 'confirmed', 'cancelled', 'completed'],
+    default: 'pending',
+  })
+  status: string;
 
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date;
 
   @UpdateDateColumn({ type: 'timestamp' })
   updatedAt: Date;
+
+  @DeleteDateColumn({ type: 'timestamp' })
+  deleteAt: Date;
 }
