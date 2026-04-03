@@ -10,6 +10,38 @@
   right: 4rem;
   transition: scale 1s ease-in-out;
 }
+
+@media (max-width: 768px) {
+  .title {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    padding-top: 15vh;
+    padding-left: 2rem;
+  }
+
+  .logo {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: 2rem;
+    display: block;
+    max-width: 200px;
+    width: 60%;
+    height: auto;
+  }
+
+  .logo.out {
+    scale: 1;
+  }
+
+  .logo.next-up {
+    animation: none;
+  }
+}
+
 .logo.out{
   scale: 20;
 }

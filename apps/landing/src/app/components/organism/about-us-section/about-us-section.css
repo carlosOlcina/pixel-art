@@ -6,7 +6,32 @@
   background: var(--color-primary);
   opacity: 0;
   transition: opacity 100ms ease-in 1s;
+  height: 100%;
+  width: 100%;
 }
+
+@media (max-width: 768px) {
+  .who-we-are {
+    position: relative;
+    opacity: 1;
+    height: auto;
+    min-height: 100vh;
+    padding: 3rem 1rem;
+  }
+
+  .grid-wrap {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .content {
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+
 .grid-wrap{
   padding: 6rem;
   height: 100%;
