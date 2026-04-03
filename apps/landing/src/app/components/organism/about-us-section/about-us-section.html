@@ -1,4 +1,11 @@
-<landing-section [ngClass]="{'who-we-are': true, 'next': isNext()}">
+<landing-section
+  [ngClass]="{
+    'who-we-are': true,
+    'next-down': isNext() && direction() === 'down',
+    'next-up': isNext() && direction() === 'up',
+    'out-up': isOut() && direction() === 'up',
+  }"
+>
   <div class="grid-wrap">
     <div class="logo">
       <landing-logo [color]="colorSecondary" [size]="250"></landing-logo>

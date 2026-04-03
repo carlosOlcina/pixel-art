@@ -24,6 +24,8 @@ export class HeroSection {
   scrollSectionService = inject(ScrollSectionService);
 
   isOut = computed(() => this.scrollSectionService.outSection() === 'hero');
+  isNext = computed(() => this.scrollSectionService.nextSection() === 'hero');
+  direction = this.scrollSectionService.direction;
 
   colorLogo = colorsBrand.primary;
 }

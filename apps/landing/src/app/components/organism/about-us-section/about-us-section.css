@@ -32,8 +32,15 @@
 }
 
 
-.who-we-are.next {
+.who-we-are.next-down {
   opacity: 1;
 }
-
+.who-we-are.next-up {
+  transition: none;
+  opacity: 1;
+}
+.who-we-are.out-up {
+  transition-duration: 100ms;
+  transition-delay: 0s;
+}
 

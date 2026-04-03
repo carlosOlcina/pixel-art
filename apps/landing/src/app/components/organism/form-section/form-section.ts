@@ -44,6 +44,8 @@ export class FormSection {
   scrollSectionService = inject(ScrollSectionService);
 
   isNext = computed(() => this.scrollSectionService.nextSection() === 'form');
+  isOut = computed(() => this.scrollSectionService.outSection() === 'form');
+  direction = this.scrollSectionService.direction;
 
   form = new FormGroup({
     phone: new FormControl('', [

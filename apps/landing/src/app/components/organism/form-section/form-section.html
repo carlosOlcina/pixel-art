@@ -1,4 +1,4 @@
-<landing-section [ngClass]="{section: true, next: isNext()}">
+<landing-section [ngClass]="{section: true, next: isNext(), 'out-up': isOut() && direction() === 'up'}">
   <div class="container">
     <landing-title-2 [centered]="true">Empiece su idea</landing-title-2>
 

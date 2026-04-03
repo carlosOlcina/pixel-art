@@ -41,4 +41,6 @@ export class AboutUsSection {
   isNext = computed(
     () => this.scrollSectionService.nextSection() === 'about-us',
   );
+  isOut = computed(() => this.scrollSectionService.outSection() === 'about-us');
+  direction = this.scrollSectionService.direction;
 }
