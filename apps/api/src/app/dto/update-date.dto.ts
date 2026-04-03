@@ -20,5 +20,5 @@ export class UpdateDateDto {
 
   @IsOptional()
   @IsEnum(['pending', 'confirmed', 'cancelled', 'completed'])
-  status: boolean;
+  status: string;
 }

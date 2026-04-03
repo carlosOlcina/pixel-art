@@ -11,7 +11,7 @@ export class ResponseDateDto {
   date: string;
 
   @Expose()
-  confirmed: boolean;
+  status: string;
 
   @Expose()
   @Transform(({ value }) => new Date(value).toISOString())

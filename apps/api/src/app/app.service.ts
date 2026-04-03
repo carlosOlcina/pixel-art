@@ -2,58 +2,57 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateDateDto } from './dto/create-date.dto';
 import { UpdateDateDto } from './dto/update-date.dto';
 import { ResponseDateDto } from './dto/response-date.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { DateEntity } from './entities/date.entity';
+import { Repository } from 'typeorm';
+import { plainToClass } from 'class-transformer';
 
 @Injectable()
 export class AppService {
   dates: ResponseDateDto[] = [];
 
-  getDateById(id: string): ResponseDateDto {
-    const date = this.dates.find((date) => date.id === id);
-    if (!date) throw new NotFoundException('Date not found');
-    return date;
+  constructor(
+    @InjectRepository(Date) private readonly repo: Repository<DateEntity>,
+  ) {
+    /* empty */
   }
 
-  getDates(): ResponseDateDto[] {
-    return this.dates;
+  private formatResponse(entity: DateEntity): ResponseDateDto {
+    return plainToClass(ResponseDateDto, entity);
+  }
+
+  async getDateById(id: string): Promise<ResponseDateDto> {
+    const date = await this.repo.findOne({ where: { id } });
+    if (!date) throw new NotFoundException('Date not found');
+    return this.formatResponse(date);
+  }
+
+  async getDates(): Promise<ResponseDateDto[]> {
+    const dates = await this.repo.find();
+
+    return dates.map((d) => this.formatResponse(d));
   }
 
   createDate(dto: CreateDateDto): ResponseDateDto {
-    const date = this.dates.push({
+    const date = this.repo.create({
       id: dto.id,
       phone: dto.phone,
       date: dto.date,
-      confirmed: false,
+      status: 'pending',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     });
 
-    return this.dates[date - 1];
+    return this.formatResponse(date);
   }
 
-  updateDate(id: string, dto: UpdateDateDto): ResponseDateDto {
-    const date = this.dates.find((date) => date.id === id);
-
-    if (!date) throw new NotFoundException('Date not found');
-
-    const updatedDate = {
-      ...date,
-      ...dto,
-      updatedAt: new Date().toISOString(),
-    };
-
-    this.dates = this.dates.map((date) =>
-      date.id === id ? updatedDate : date,
-    );
-
-    return updatedDate;
+  async updateDate(id: string, dto: UpdateDateDto): Promise<ResponseDateDto> {
+    await this.repo.update(id, dto);
+    return await this.getDateById(id);
   }
 
-  deleteDate(id: string): string {
-    const date = this.dates.findIndex((date) => date.id === id);
-
-    if (date < 0) throw new NotFoundException('Date not found');
-
-    this.dates.splice(date, 1);
+  async deleteDate(id: string): Promise<string> {
+    await this.repo.softDelete({ id: id });
 
     return id;
   }

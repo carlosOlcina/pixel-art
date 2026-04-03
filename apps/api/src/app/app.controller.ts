@@ -20,13 +20,15 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get(':id')
-  getDateById(@Param('id', ParseUUIDPipe) id: string): ResponseDateDto {
-    return this.appService.getDateById(id);
+  async getDateById(
+    @Param('id', ParseUUIDPipe) id: string,
+  ): Promise<ResponseDateDto> {
+    return await this.appService.getDateById(id);
   }
 
   @Get()
-  getDates(): ResponseDateDto[] {
-    return this.appService.getDates();
+  async getDates(): Promise<ResponseDateDto[]> {
+    return await this.appService.getDates();
   }
 
   @Post()
@@ -35,15 +37,15 @@ export class AppController {
   }
 
   @Patch(':id')
-  updateDate(
+  async updateDate(
     @Param('id', ParseUUIDPipe) id: string,
     @Body() dto: UpdateDateDto,
-  ): ResponseDateDto {
-    return this.appService.updateDate(id, dto);
+  ): Promise<ResponseDateDto> {
+    return await this.appService.updateDate(id, dto);
   }
 
   @Delete(':id')
-  deleteDate(@Param('id', ParseUUIDPipe) id: string): string {
-    return this.appService.deleteDate(id);
+  async deleteDate(@Param('id', ParseUUIDPipe) id: string): Promise<string> {
+    return await this.appService.deleteDate(id);
   }
 }

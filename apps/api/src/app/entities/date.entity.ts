@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 
 @Entity({ name: 'dates' })
-export class Date {
+export class DateEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
