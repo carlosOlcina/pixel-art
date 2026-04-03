@@ -18,4 +18,5 @@ export class ProjectsSection {
 
   nextSection = this.scrollSectionService.nextSection;
   outSection = this.scrollSectionService.outSection;
+  direction = this.scrollSectionService.direction;
 }

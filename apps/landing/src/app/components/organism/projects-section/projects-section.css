@@ -17,8 +17,12 @@
   left: 5rem;
 }
 
-.project.next, .project.out{
-  position: absolute;
-  z-index: 1000;
+.project.next-down, .project.out-down{
   top: 0;
 }
+
+.project.next-up{
+  top: 0;
+  transition: none;
+}
+
