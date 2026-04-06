@@ -6,9 +6,8 @@ services:
 
     command: sleep infinity
 
-    ports:
-      - "3000:3000"
-      - "4200:4200"
+    networks:
+      - pixelart-devcontainer
 
     depends_on:
       - db
@@ -17,13 +16,19 @@ services:
     image: mariadb:10.6
     restart: unless-stopped
     volumes:
-      - pixelart-devcontainer-data:/var/lib/mysql
+      - pixelart-devcontainer-db:/var/lib/mysql
     environment:
       MARIADB_ROOT_PASSWORD: root
       MARIADB_DATABASE: mariadb
       MARIADB_USER: mariadb
       MARIADB_PASSWORD: mariadb
+    networks:
+      - pixelart-devcontainer
 
 
 volumes:
-  pixelart-devcontainer-data:
+  pixelart-devcontainer-db:
+
+networks:
+  pixelart-devcontainer:
+    driver: bridge

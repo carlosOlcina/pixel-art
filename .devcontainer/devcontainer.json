@@ -5,6 +5,7 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "runServices": ["app", "db"],
 
   "features": {
     "ghcr.io/devcontainers-extra/features/nx-npm": {
