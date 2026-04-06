@@ -1,0 +1,29 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    command: sleep infinity
+
+    ports:
+      - "3000:3000"
+      - "4200:4200"
+
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.6
+    restart: unless-stopped
+    volumes:
+      - pixelart-devcontainer-data:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: mariadb
+      MARIADB_USER: mariadb
+      MARIADB_PASSWORD: mariadb
+
+
+volumes:
+  pixelart-devcontainer-data:

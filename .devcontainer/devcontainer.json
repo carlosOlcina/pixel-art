@@ -1,0 +1,32 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node-postgres
+{
+  "name": "PixelArt devcontainer",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  "features": {
+    "ghcr.io/devcontainers-extra/features/nx-npm": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers-extra/features/pnpm": {
+      "version": "latest"
+    }
+  },
+
+  "forwardPorts": [4200, 3306, 3000],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "pnpm i",
+
+  // Configure tool-specific properties.
+  "customizations": {
+    "jetbrains": {
+      "backend": "WebStorm"
+    }
+  }
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
