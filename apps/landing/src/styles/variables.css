@@ -1,21 +1,34 @@
 :root {
+  /* Base colors */
   --color-primary: #2D4F1E;
   --color-secondary: #F5E6CC;
   --color-tertiry: #E27D60;
   --color-neutral: #4A4A4A;
 
+  /* sizes */
   --header-height: 10vh;
   --section-height: 100vh;
 
+  /* DATEPICKER */
   --mat-datepicker-calendar-container-background-color: var(--color-primary);
   --mat-datepicker-calendar-container-text-color: var(--color-secondary);
   --mat-datepicker-calendar-date-text-color: var(--color-secondary);
   --mat-datepicker-calendar-container-elevation-shadow: 1px 1px 1px black;
   --mat-datepicker-calendar-container-shape: 1rem;
+  --mat-datepicker-toggle-icon-color: var(--color-neutral);
+  --mat-datepicker-toggle-error-icon-color: #d32f2f;
+  --mat-datepicker-toggle-error-hover-icon-color: #d32f2f;
 
+  /* TIMEPICKERS */
   --mat-timepicker-container-background-color: var(--color-primary);
+  --mat-timepicker-toggle-icon-color: var(--color-neutral);
+  --mat-timepicker-toggle-error-icon-color: #d32f2f;
+  --mat-timepicker-toggle-error-hover-icon-color: #d32f2f;
+
+  /* OPTION */
   --mat-option-label-text-color: var(--color-secondary);
 
+  /* FORM FIELDS */
   --mat-form-field-outlined-container-shape: 16px;
   --mat-form-field-outlined-outline-color: var(--color-tertiry);
   --mat-form-field-outlined-hover-outline-color: var(--color-tertiry);
@@ -23,15 +36,12 @@
   --mat-form-field-outlined-outline-width: 2px;
   --mat-form-field-outlined-focus-outline-width: 3px;
   --mat-form-field-focus-select-handle-color: var(--color-tertiry);
-
-  --mat-timepicker-toggle-icon-color: var(--color-neutral);
-  --mat-datepicker-toggle-icon-color: var(--color-neutral);
   --mat-form-field-trailing-icon-color: var(--color-neutral);
   --mat-form-field-outlined-label-text-color: var(--color-neutral);
   --mat-form-field-outlined-hover-label-text-color: var(--color-neutral);
   --mat-form-field-outlined-focus-label-text-color: var(--color-neutral);
 
-  /*Error colors*/
+  /* FORM FIELDS ERROR */
   --mat-form-field-error-text-color: #d32f2f;
   --mat-form-field-outlined-error-outline-color: #d32f2f;
   --mat-form-field-outlined-error-hover-outline-color: #d32f2f;
@@ -41,9 +51,5 @@
   --mat-form-field-outlined-error-focus-label-text-color: #d32f2f;
   --mat-form-field-error-trailing-icon-color: #d32f2f;
   --mat-form-field-outlined-error-hover-trailing-icon-color: #d32f2f;
-  --mat-datepicker-toggle-error-icon-color: #d32f2f;
-  --mat-timepicker-toggle-error-icon-color: #d32f2f;
 
-  --mat-datepicker-toggle-error-hover-icon-color: #d32f2f;
-  --mat-timepicker-toggle-error-hover-icon-color: #d32f2f;
 }
