@@ -8,11 +8,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     // TODO move to .env
     TypeOrmModule.forRoot({
       type: 'mariadb',
-      host: 'localhost',
-      port: 3306,
-      username: 'admin',
-      password: 'admin',
-      database: 'maria',
+      host: process.env.MARIADB_HOST || 'localhost',
+      port: Number(process.env.MARIADB_PORT) || 3306,
+      username: process.env.MARIADB_USER || 'mariadb',
+      password: process.env.MARIADB_PASSWORD || 'mariadb',
+      database: process.env.MARIADB_DATABASE || 'pixelart',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: process.env.NODE_ENV !== 'production',
     }),

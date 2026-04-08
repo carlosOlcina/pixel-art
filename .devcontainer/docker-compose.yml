@@ -6,6 +6,13 @@ services:
 
     command: sleep infinity
 
+    volumes:
+      - ..:/workspaces/${LOCAL_WORKSPACE_FOLDER_BASENAME}
+
+    env_file:
+      - ../environment/.env.dev
+      - ../environment/.env.local
+
     networks:
       - pixelart-devcontainer
 
@@ -17,11 +24,9 @@ services:
     restart: unless-stopped
     volumes:
       - pixelart-devcontainer-db:/var/lib/mysql
-    environment:
-      MARIADB_ROOT_PASSWORD: root
-      MARIADB_DATABASE: mariadb
-      MARIADB_USER: mariadb
-      MARIADB_PASSWORD: mariadb
+    env_file:
+      - ../environment/.env.dev
+      - ../environment/.env.local
     networks:
       - pixelart-devcontainer
 
