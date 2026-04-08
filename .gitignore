@@ -16,6 +16,8 @@ node_modules
 *.launch
 .settings/
 *.sublime-workspace
+.pnpm-debug.log
+.pnpm-store
 
 # IDE - VSCode
 .vscode/*
