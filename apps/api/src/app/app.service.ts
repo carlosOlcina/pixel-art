@@ -12,7 +12,7 @@ export class AppService {
   dates: ResponseDateDto[] = [];
 
   constructor(
-    @InjectRepository(Date) private readonly repo: Repository<DateEntity>,
+    @InjectRepository(DateEntity) private readonly repo: Repository<DateEntity>,
   ) {
     /* empty */
   }
@@ -33,7 +33,7 @@ export class AppService {
     return dates.map((d) => this.formatResponse(d));
   }
 
-  createDate(dto: CreateDateDto): ResponseDateDto {
+  async createDate(dto: CreateDateDto): Promise<ResponseDateDto> {
     const date = this.repo.create({
       id: dto.id,
       phone: dto.phone,
@@ -43,7 +43,9 @@ export class AppService {
       updatedAt: new Date().toISOString(),
     });
 
-    return this.formatResponse(date);
+    const saved = await this.repo.save(date);
+
+    return this.formatResponse(saved);
   }
 
   async updateDate(id: string, dto: UpdateDateDto): Promise<ResponseDateDto> {

@@ -32,8 +32,8 @@ export class AppController {
   }
 
   @Post()
-  createDate(@Body() dto: CreateDateDto): ResponseDateDto {
-    return this.appService.createDate(dto);
+  async createDate(@Body() dto: CreateDateDto): Promise<ResponseDateDto> {
+    return await this.appService.createDate(dto);
   }
 
   @Patch(':id')

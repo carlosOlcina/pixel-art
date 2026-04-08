@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { DateEntity } from './entities/date.entity';
 
 @Module({
   imports: [
-    // TODO move to .env
     TypeOrmModule.forRoot({
       type: 'mariadb',
       host: process.env.MARIADB_HOST || 'localhost',
@@ -13,9 +13,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: process.env.MARIADB_USER || 'mariadb',
       password: process.env.MARIADB_PASSWORD || 'mariadb',
       database: process.env.MARIADB_DATABASE || 'pixelart',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      entities: [DateEntity],
       synchronize: process.env.NODE_ENV !== 'production',
     }),
+    TypeOrmModule.forFeature([DateEntity]),
   ],
   controllers: [AppController],
   providers: [AppService],
