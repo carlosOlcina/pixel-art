@@ -10,3 +10,9 @@ h1{
     line-height: 1.1;
   }
 }
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
