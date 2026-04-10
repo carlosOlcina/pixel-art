@@ -9,6 +9,10 @@
   --header-height: 10vh;
   --section-height: 100vh;
 
+  /* breakpoints */
+  --breakpoint-tablet: 1024px;
+  --breakpoint-mobile: 768px;
+
   /* DATEPICKER */
   --mat-datepicker-calendar-container-background-color: var(--color-primary);
   --mat-datepicker-calendar-container-text-color: var(--color-secondary);
