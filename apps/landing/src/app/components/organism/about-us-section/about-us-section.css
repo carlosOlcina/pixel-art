@@ -1,4 +1,4 @@
-.who-we-are{
+.who-we-are {
   position: absolute;
   top: 0;
   left: 0;
@@ -10,29 +10,7 @@
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .who-we-are {
-    position: relative;
-    opacity: 1;
-    height: auto;
-    min-height: 100vh;
-    padding: 3rem 1rem;
-  }
-
-  .grid-wrap {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .content {
-    align-items: flex-start;
-    gap: 2rem;
-  }
-}
-
-.grid-wrap{
+.grid-wrap {
   padding: 6rem;
   height: 100%;
 
@@ -43,19 +21,18 @@
   align-content: center;
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
   gap: 4rem;
   align-items: end;
 }
 
-.paragraphs{
+.paragraphs {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-
 
 .who-we-are.next-down {
   opacity: 1;
@@ -69,3 +46,42 @@
   transition-delay: 0s;
 }
 
+@media (max-width: 768px) {
+  .who-we-are {
+    position: relative;
+    opacity: 1;
+    height: auto;
+    min-height: 100vh;
+    padding: 3rem 1rem;
+  }
+
+  .grid-wrap {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100vw;
+  }
+
+  .content {
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .logo {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid-wrap {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .content {
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
