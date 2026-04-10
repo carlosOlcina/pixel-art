@@ -31,6 +31,26 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .section {
+    position: relative;
+    display: block;
+    opacity: 1;
+    height: auto;
+    min-height: 100vh;
+    padding: 3rem 0;
+  }
+
+  .container {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+    gap: 3rem;
+  }
+}
+
 .container{
   position: absolute;
   top: 50%;
