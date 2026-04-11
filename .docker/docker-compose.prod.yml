@@ -23,8 +23,8 @@ services:
       target: api-runtime
     restart: always
     depends_on:
-      db:
-        condition: service_healthy
+      - db
+
     networks:
       - app-network
 
