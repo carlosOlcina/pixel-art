@@ -1,9 +1,15 @@
 <landing-section class="hero-section">
-  <landing-title-1 class="title">
-    Forma. <br>
-    Función. <br>
-    Carácter. <br>
-  </landing-title-1>
+  <div class="container">
+    <landing-title-1 class="title">
+      Forma. <br />
+      Función. <br />
+      Carácter. <br />
+    </landing-title-1>
 
-  <landing-logo [color]="colorLogo" [size]="277" [ngClass]="{logo: true, out: isOut(), 'next-up': isNext() && direction() === 'up'}" ></landing-logo>
+    <landing-logo
+      [color]="colorLogo"
+      [size]="277"
+      [ngClass]="{logo: true, out: isOut(), 'next-up': isNext() && direction() === 'up'}"
+    ></landing-logo>
+  </div>
 </landing-section>
