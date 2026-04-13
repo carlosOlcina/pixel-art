@@ -1,4 +1,4 @@
-header{
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,12 +31,7 @@ header{
   }
 }
 
-header nav ul{
-  display: flex;
-  gap: 4rem;
-}
-
-.brand{
+.brand {
   font-weight: 500;
   color: var(--color-tertiry);
   font-size: 1.3rem;
