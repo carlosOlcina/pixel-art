@@ -5,12 +5,12 @@
 
 @media (max-width: 768px) {
   * {
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow-x: initial;
+    overflow-y: initial;
   }
 }
 
-body{
+body {
   background-color: var(--color-secondary);
   overflow: hidden;
   height: 100vh;
@@ -25,4 +25,3 @@ body{
     width: 100%;
   }
 }
-
